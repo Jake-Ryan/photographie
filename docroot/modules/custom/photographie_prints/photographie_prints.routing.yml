@@ -1,0 +1,7 @@
+photographie_prints_contribute:
+  path: 'prints'
+  defaults:
+    _form: '\Drupal\photographie_prints\Form\ContributeForm'
+    _title: 'Photo prints'
+  requirements:
+    _permission: 'access content'

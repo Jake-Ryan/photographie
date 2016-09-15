@@ -1,0 +1,115 @@
+/**
+* Navbar section
+*/
+.hover-for-menu {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 80px;
+  opacity: 0;
+}
+
+.navbar-default .navbar-brand {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: ;
+}
+
+.navbar-default .navbar-brand:hover {
+  text-decoration: underline;
+  color: ;
+}
+
+.navbar-default .navbar-nav li a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: ;
+  text-decoration: none;
+}
+
+.navbar-default .navbar-nav li a:hover {
+  color: ;
+  text-decoration: underline;
+}
+
+.navbar-nav  li.expanded.dropdown > a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: ;
+  text-decoration: none;
+}
+
+.navbar-nav li.expanded.dropdown > a:hover {
+  color: ;
+  text-decoration: underline;
+}
+
+.navbar-nav li.expanded.dropdown.open a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: ;
+  text-decoration: none;
+}
+
+.navbar-nav li.expanded.dropdown.open ul a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: ;
+  text-decoration: none;
+}
+
+.navbar-nav li.expanded.dropdown.open ul a:hover {
+  color: ;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+
+/**
+* Subnav section
+*/
+.paragraph--type--sub-navigation-section {
+  display: block;
+}
+
+.paragraph--type--sub-navigation-section h3 {
+  position: relative;
+  z-index: 10;
+  float: left;
+  width: 20%;
+  background-image: url("../img/sub_nav_arrow.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.paragraph--type--sub-navigation-section .sub-navigation {
+  position: relative;
+  z-index: 9;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 62em){
+  .paragraph--type--sub-navigation-section .sub-navigation a {
+    display: static;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100%;
+  }
+}
+
+.paragraph--type--sub-navigation-section .sub-navigation a {
+  display: block;
+  float: left;
+  width: 50%;
+  padding: 20px 20px 19px 20px;
+  font-size: 17px;
+  color: #626262;
+  text-align: center;
+}

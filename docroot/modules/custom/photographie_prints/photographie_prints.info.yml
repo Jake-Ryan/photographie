@@ -1,0 +1,5 @@
+name: Photographie prints form
+type: module
+package: Custom
+description: 'Custom form for selecting prints for photographs.'
+core: 8.x

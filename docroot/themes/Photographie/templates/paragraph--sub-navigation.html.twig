@@ -36,19 +36,4 @@
  * @ingroup themeable
  */
 #}
-{%
-set classes = [
-'paragraph--type--' ~ paragraph.bundle|clean_class,
-]
-%}
-
-{% set id = content.field_section_anchor_link['#items'].value %}
-
-<section{{ attributes.addClass(classes).setAttribute('id', id) }}>
-	<div class="sub-navigation-section">
-		<h3>{{ content.field_subnavigation_title }}</h3>
-		<nav class="sub-navigation">
-  		{{ content.field_subnavigation_item }}
-		</nav>
-	</div>
-</section>
+<a href="{{ content.field_sub_navigation_hash['#items'].value }}" class="scroll-anchor">{{ content.field_section_title }}</a>
