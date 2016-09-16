@@ -717,18 +717,19 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  *
  * Keep this code block at the end of this file to take full effect.
  */
-# if (file_exists(__DIR__ . '/settings.local.php')) {
-#   include __DIR__ . '/settings.local.php';
-# }
-$databases['default']['default'] = array (
-  'database' => 'vladdb',
-  'username' => 'vlad',
-  'password' => 'wibble',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
+if (file_exists(__DIR__ . '/settings.local.php')) {
+ include __DIR__ . '/settings.local.php';
+}
+
+// $databases['default']['default'] = array (
+//   'database' => 'vladdb',
+//   'username' => 'vlad',
+//   'password' => 'wibble',
+//   'prefix' => '',
+//   'host' => 'localhost',
+//   'port' => '3306',
+//   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+//   'driver' => 'mysql',
+// );
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = 'sites/default/files/config_9G2ltCUoI39Hux7YQSXZlvG8HQOyjhO525bgdXoXzIPnSlQDB-lPMnYnbGjqckP17w9S5s_W_g/sync';
