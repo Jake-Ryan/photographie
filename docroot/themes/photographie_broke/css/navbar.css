@@ -73,43 +73,18 @@
 * Subnav section
 */
 .paragraph--type--sub-navigation-section {
-  display: block;
+
 }
 
-.paragraph--type--sub-navigation-section h3 {
-  position: relative;
-  z-index: 10;
-  float: left;
-  width: 20%;
-  background-image: url("../img/sub_nav_arrow.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-}
-
-.paragraph--type--sub-navigation-section .sub-navigation {
-  position: relative;
-  z-index: 9;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.sub-navigation-section--wrapper {
   display: flex;
 }
 
-@media (min-width: 62em){
-  .paragraph--type--sub-navigation-section .sub-navigation a {
-    display: static;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    height: 100%;
-  }
+.sub-navigation {
+    width: 100%;
 }
 
-.paragraph--type--sub-navigation-section .sub-navigation a {
-  display: block;
-  float: left;
-  width: 50%;
-  padding: 20px 20px 19px 20px;
-  font-size: 17px;
-  color: #626262;
-  text-align: center;
+.field--name-field-sub-navigation-item {
+  display: flex;
+  justify-content: space-around;
 }

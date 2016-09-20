@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+  function photographie_theme_preprocess_node(&$vars) {
+
+    if (isset($vars['node'])) {
+
+      if ($vars['node']->getType() == 'private_photo_collection') {
+        $client = $vars['node']->field_client->getValue();
+        $user = $vars['user'];
+        $user_roles = $vars['user']->getRoles();
+
+        $options = array('administrator','photographer');
+
+        if (in_array($options, $user_roles)) {
+          echo 'MEH';
+        } else {
+          var_dump($options);
+        }
+
+      }
+    }
+  }

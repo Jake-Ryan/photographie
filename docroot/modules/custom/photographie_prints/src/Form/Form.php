@@ -9,6 +9,9 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\UrlHelper;
 
+// This form is for a user who has already hired photographer, as a request for
+//additional prints of photographs
+
 /**
  * Contribute form.
  */
@@ -43,6 +46,12 @@ class ContributeForm extends FormBase {
       '#description' => t('Select a print size for the selected images'),
     );
 
+    $form['photoshop'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Photoshop these images?'),
+      '#description' => t('Select if you would like photoshopping or touch-ups to these photographs before they are printed.'),
+    );
+
     $form['submit'] = array(
       '#type' => 'submit',
       '#value' => t('Submit'),
@@ -55,11 +64,15 @@ class ContributeForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+    // Size selected
+    // Data in important fields
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    // Compile an email
+    // Flag some form of notification on site for photographer
   }
 }
