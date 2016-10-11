@@ -27,15 +27,15 @@
 
 .paragraph--type--hero-section .p-container .hero-image {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .paragraph--type--hero-section .p-container .hero-image img {
   display: block;
   width: 100%;
-  max-width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .paragraph--type--two-column-section {

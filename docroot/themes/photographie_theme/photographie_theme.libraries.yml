@@ -2,3 +2,23 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+
+magnific-popup:
+  css:
+    theme:
+      css/vendor/magnific-popup/magnific-popup.css: {}
+  js:
+    js/vendor/magnific-popup/jquery.magnific-popup.min.js: {}
+
+font-awesome:
+  css:
+    theme:
+      css/vendor/font-awesome/font-awesome.min.css: {}
+
+image-selector:
+  js:
+    js/imageselector.js: {}
+
+unveil:
+  js:
+    js/vendor/unveil/jquery.unveil.js: {}

@@ -6,23 +6,41 @@
  * Place your custom PHP code in this file.
  */
 
+ use Drupal\image\Entity\ImageStyle;
+
   function photographie_theme_preprocess_node(&$vars) {
 
     if (isset($vars['node'])) {
-
       if ($vars['node']->getType() == 'private_photo_collection') {
+
         $client = $vars['node']->field_client->getValue();
-        $user = $vars['user'];
+        $user_id = \Drupal::currentUser()->id();
         $user_roles = $vars['user']->getRoles();
 
-        $options = array('administrator','photographer');
-
-        if (in_array($options, $user_roles)) {
-          echo 'MEH';
+        if (in_array('administrator', $user_roles) || in_array('photographer', $user_roles) || $client[0]['target_id'] == $user_id) {
+          //echo 'Access granted';
         } else {
-          var_dump($options);
+          //echo 'Access denied';
         }
-
       }
     }
   }
+
+
+function photographie_theme_preprocess_field(&$vars) {
+  if ($vars['field_name'] == 'field_raw_images') {
+
+    foreach ($vars['items'] as $item) {
+      $fid = $item['content']['#item']->entity->id();
+      $uri = $item['content']['#item']->entity->getFileUri();
+      $filename = $item['content']['#item']->entity->getFileName();
+
+      // Generate an image url for a given image style
+      $vars['photographie_theme_image_expanded'][$fid] = ImageStyle::load('image_expanded')->buildUrl($uri);
+      $vars['photographie_theme_image_unexpanded'][$fid] = ImageStyle::load('gallery_image')->buildUrl($uri);
+
+      // Grab filename of image.
+      $vars['photographie_theme_filename'][$fid] = $filename;
+    }
+  }
+}
