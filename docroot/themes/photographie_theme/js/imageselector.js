@@ -19,15 +19,5 @@
       $('#num-selected').replaceWith('<span id="num-selected">'+selectedCount+'</span>');
     });
 
-    // MAGNIFIC POPUP
-    $('.popup-image-expand').magnificPopup({
-  		type: 'image',
-  		closeOnContentClick: true,
-  		mainClass: 'mfp-img-mobile mfp-with-zoom',
-  		image: {
-  			verticalFit: true
-  		}
-  	});
-
-    });
+  });
 }(jQuery));

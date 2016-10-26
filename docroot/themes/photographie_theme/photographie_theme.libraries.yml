@@ -19,6 +19,10 @@ image-selector:
   js:
     js/imageselector.js: {}
 
+magnific-popup-selector:
+  js:
+    js/magnificpopup.js: {}
+
 unveil:
   js:
     js/vendor/unveil/jquery.unveil.js: {}
