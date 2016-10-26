@@ -23,6 +23,19 @@
           //echo 'Access denied';
         }
       }
+
+      if ($vars['node']->getType() == 'advanced_page') {
+
+        // Get taxonomy id from paragraph field
+        //$tid = $vars['node']->field_paragraph->getValue()
+
+        // Get view object using taxonomy id as argument
+        //$view = \Drupal\views\Views::getView('category_view', 'block_1', $tid);
+
+        // Assign variable for template
+        //$vars['photographie_theme_gallery_block'][$tid] = $view;
+
+      }
     }
   }
 
