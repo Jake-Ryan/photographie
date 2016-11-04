@@ -97,9 +97,10 @@
 }
 
 .paragraph--type--gallery-section .gallery-heading {
-  margin-left: 15px;
+  margin-left: 2em;
 }
 
-.field--item:nth-child(3) .gallery-heading {
+.field--item:nth-child(2n + 1) .gallery-heading {
   text-align: right;
+  margin-right: 2em;
 }

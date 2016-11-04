@@ -4,5 +4,9 @@
 }
 
 .menu.dropdown-menu li {
-  
+  float: left;
+  width: 200px;
+  height: 140px;
+  text-align: center;
+  padding: 15px;
 }
