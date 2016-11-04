@@ -71,33 +71,22 @@
     not node.isPublished() ? 'is-unpublished',
     view_mode ? view_mode|clean_class,
     'clearfix',
-    'private-photos'
   ]
 %}
-
-{{ attach_library('photographie_theme/magnific-popup') }}
-{{ attach_library('photographie_theme/magnific-popup-selector') }}
-{{ attach_library('photographie_theme/image-selector') }}
-
 <article{{ attributes.addClass(classes) }}>
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('author') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
   <div{{ content_attributes.addClass('content') }}>
-    <!-- raw images -->
-    <h2>Original images:</h2>
-    <p>Click to select images, or click the expand icon to view a larger version.</p>
-
-      <form id="private-images">
-      <div class="raw-images">
-        {{ content['field_raw_images'] }}
-      </div>
-
-      <div id="fixed-bottom">
-        <div class="selected-wrapper">
-          <h2><span id="num-selected">0</span></h2>
-          <h2>images selected</h2>
-        </div>
-        {# button for submitting selected images. MVP - filename of images emailed/stored #}
-      </div>
-   </form>
-
+    {{ content }}
   </div>
+
 </article>

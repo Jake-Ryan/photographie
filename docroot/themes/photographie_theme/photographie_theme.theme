@@ -7,34 +7,25 @@
  */
 
  use Drupal\image\Entity\ImageStyle;
+ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
   function photographie_theme_preprocess_node(&$vars) {
 
     if (isset($vars['node'])) {
-      if ($vars['node']->getType() == 'private_photo_collection') {
+
+      $node = $vars['node'];
+
+      if ($node->getType() == 'private_photo_collection') {
 
         $client = $vars['node']->field_client->getValue();
         $user_id = \Drupal::currentUser()->id();
         $user_roles = $vars['user']->getRoles();
 
         if (in_array('administrator', $user_roles) || in_array('photographer', $user_roles) || $client[0]['target_id'] == $user_id) {
-          //echo 'Access granted';
+          return;
         } else {
-          //echo 'Access denied';
+          throw new AccessDeniedHttpException();
         }
-      }
-
-      if ($vars['node']->getType() == 'advanced_page') {
-
-        // Get taxonomy id from paragraph field
-        //$tid = $vars['node']->field_paragraph->getValue()
-
-        // Get view object using taxonomy id as argument
-        //$view = \Drupal\views\Views::getView('category_view', 'block_1', $tid);
-
-        // Assign variable for template
-        //$vars['photographie_theme_gallery_block'][$tid] = $view;
-
       }
     }
   }

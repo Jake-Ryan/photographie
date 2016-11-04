@@ -1,5 +1,6 @@
 @import "navbar.css";
-@import "paragraphs.css";
+@import "magnific.css";
+@import "paragraphs/paragraphs.css";
 
 /**
 * Body
@@ -8,10 +9,14 @@ html, body {
   height: 100%;
 }
 
+body.navbar-is-fixed-top {
+  margin-top: 50px;
+}
+
 .main-container {
   margin: 0 auto;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1920px;
 }
 
 .region-content {
@@ -110,17 +115,25 @@ ol, ul {
 }
 
 #fixed-bottom {
+  text-align: center;
+}
+
+#fixed-bottom {
   position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
-  height: 50px;
+  height: 75px;
   padding: 0 5em;
   background-color: #e7e7e7;
 }
 
-.selected-wrapper > span,
-.selected-wrapper > p {
+.selected-wrapper {
+  margin-top: 2em
+}
+
+.selected-wrapper > h2 > span,
+.selected-wrapper > h2 {
   display: inline;
 }
 
@@ -188,4 +201,8 @@ ol, ul {
   height: auto;
   background-clip: padding-box;
   padding: 15px;
+}
+
+.view-test form {
+  display: none;
 }
