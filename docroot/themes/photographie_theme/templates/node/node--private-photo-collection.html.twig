@@ -85,19 +85,20 @@
     <h2>Original images:</h2>
     <p>Click to select images, or click the expand icon to view a larger version.</p>
 
-      <form id="private-images">
+    <form id="private-images" action="" method="post">
       <div class="raw-images">
-        {{ content['field_raw_images'] }}
+        <fieldset>
+          {{ content['field_raw_images'] }}
+        </fieldset>
       </div>
 
       <div id="fixed-bottom">
         <div class="selected-wrapper">
-          <h2><span id="num-selected">0</span></h2>
-          <h2>images selected</h2>
+          <h2><span id="num-selected">0</span> images selected</h2>
         </div>
-        {# button for submitting selected images. MVP - filename of images emailed/stored #}
+        <input type="submit" value="Next"/>
       </div>
-   </form>
+    </form>
 
   </div>
 </article>

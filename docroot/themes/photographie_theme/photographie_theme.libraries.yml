@@ -23,6 +23,10 @@ magnific-popup-selector:
   js:
     js/magnificpopup.js: {}
 
+scrolling-test:
+  js:
+    js/scripts.js: {}
+
 unveil:
   js:
     js/vendor/unveil/jquery.unveil.js: {}

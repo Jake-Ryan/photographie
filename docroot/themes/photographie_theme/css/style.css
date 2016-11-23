@@ -1,5 +1,4 @@
 @import "navbar.css";
-@import "magnific.css";
 @import "paragraphs/paragraphs.css";
 
 /**
@@ -16,7 +15,7 @@ body.navbar-is-fixed-top {
 .main-container {
   margin: 0 auto;
   width: 100%;
-  max-width: 1920px;
+  padding: 0;
 }
 
 .region-content {
@@ -37,6 +36,12 @@ ol, ul {
 /**
 * Image collection
 */
+
+.private-photo-collection .content {
+  width: 60%;
+  margin: 0 auto;
+}
+
 .raw-images,
 .edited-images {
   display: block;
@@ -74,6 +79,10 @@ ol, ul {
   -moz-column-count:    2;
   -webkit-column-count: 2;
   column-count:         2;
+  }
+
+  .private-photo-collection .content {
+    width: 90%;
   }
 }
 @media (max-width: 400px) {
@@ -129,7 +138,7 @@ ol, ul {
 }
 
 .selected-wrapper {
-  margin-top: 2em
+  margin-top: 1em
 }
 
 .selected-wrapper > h2 > span,

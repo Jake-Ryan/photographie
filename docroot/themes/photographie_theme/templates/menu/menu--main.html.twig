@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup templates
+ */
+#}
+<nav class="mega-menu">
+  <ul class="top-main-menu">
+    <li>
+      <!-- Dropdown item -->
+      <a href="#" class="menu-categories dropdown-toggle" data-toggle="dropdown">{{ 'Categories'|t }}</a>
+      <ul class="categories-list dropdown-menu">
+
+        <a href="/categories?tid=1" class="menu-link">
+          <li class="category wedding">
+            <div class="category-panel">
+              <p>{{ 'Wedding'|t }}</p>
+            </div>
+          </li>
+        </a>
+
+        <a href="/categories?tid=2" class="menu-link">
+          <li class="category portrait">
+            <div class="category-panel">
+              <p>{{ 'Portrait'|t }}</p>
+            </div>
+          </li>
+        </a>
+
+        <a href="/categories?tid=11" class="menu-link">
+          <li class="category pet">
+            <div class="category-panel">
+              <p>{{ 'Pet'|t }}</p>
+            </div>
+          </li>
+        </a>
+
+        <a href="/categories?tid=8" class="menu-link">
+          <li class="category landscape">
+            <div class="category-panel">
+              <p>{{ 'Landscape'|t }}</p>
+            </div>
+          </li>
+        </a>
+
+        <a href="/categories?tid=12" class="menu-link">
+          <li class="category misc">
+            <div class="category-panel">
+              <p>{{ 'Misc'|t }}</p>
+            </div>
+          </li>
+        </a>
+
+      </ul>
+    </li>
+  </ul>
+</nav>

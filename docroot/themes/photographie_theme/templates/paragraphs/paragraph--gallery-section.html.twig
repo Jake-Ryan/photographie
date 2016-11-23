@@ -41,13 +41,12 @@ set classes = [
 'paragraph',
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+'gallery-section'
 ]
 %}
 {% set view_meh = content.field_category.0['#markup'] %}
 
-
-
 <div{{ attributes.addClass(classes) }}>
-  <h2 class="gallery-heading">{{ content.field_section_title.0['#context']['value'] }}</h2>
+  <h2 class="gallery-heading">{{ content.field_section_title }}</h2>
   {{ drupal_view('test', view_meh) }}
 </div>

@@ -44,8 +44,6 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
-{% set id = content.field_section_anchor_link['#items'].value %}
-
 <section{{ attributes.addClass(classes).setAttribute('id', id) }}>
 	<div class="p-container">
 		<div class="hero-image">

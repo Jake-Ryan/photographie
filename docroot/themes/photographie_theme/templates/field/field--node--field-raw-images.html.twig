@@ -54,11 +54,6 @@
 
 {% if label_hidden %}
   {% if multiple %}
-
-
-
-
-
     <div{{ attributes.addClass(classes, 'field--items') }}>
       {% for item in items %}
         <div{{ item.attributes.addClass('field--item') }}>
@@ -74,14 +69,19 @@
         </div>
       {% endfor %}
     </div>
-
-
-
-
-
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('field--item') }}>
+
+        <div class="image-wrapper">
+          <label class="image-select-wrapper" for="image-{{ item.content['#item'].entity.fid.value }}">
+            <img class="loading" src="../themes/photographie_theme/images/loading.gif" data-src="{{ attribute(photographie_theme_image_unexpanded, item.content['#item'].entity.fid.value) }}" />
+            <input id="image-selection-box" type="checkbox" name="image-{{ item.content['#item'].entity.fid.value }}" value="{{ attribute(photographie_theme_filename, item.content['#item'].entity.fid.value) }}" />
+          </label>
+          <a class="popup-image-expand" href="{{ attribute(photographie_theme_image_expanded, item.content['#item'].entity.fid.value) }}"><i class="expand-icon fa fa-arrows-alt" aria-hidden="true"></i></a>
+        </div>
+
+      </div>
     {% endfor %}
   {% endif %}
 {% else %}
