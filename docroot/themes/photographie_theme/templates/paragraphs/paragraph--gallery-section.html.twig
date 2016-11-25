@@ -44,7 +44,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 'gallery-section'
 ]
 %}
-{% set view_meh = content.field_category.0['#markup'] %}
+{% set view_meh = content.field_category.0['#title']|clean_class %}
 
 <div{{ attributes.addClass(classes) }}>
   <h2 class="gallery-heading">{{ content.field_section_title }}</h2>

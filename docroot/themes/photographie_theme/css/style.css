@@ -33,6 +33,10 @@ ol, ul {
   padding: 0;
 }
 
+.breadcrumb {
+  display: none;
+}
+
 /**
 * Image collection
 */
@@ -107,7 +111,7 @@ ol, ul {
   height: auto;
   background-clip: padding-box;
   cursor: pointer;
-  padding: 15px;
+  padding: 3px;
 
   transition: opacity 500ms ease-in;
   opacity: 1;
@@ -150,6 +154,7 @@ ol, ul {
 .image-select-wrapper {
   position: relative;
   width: 100%;
+  margin: 0;
 }
 
 .image-wrapper .expand-icon {
@@ -214,4 +219,57 @@ ol, ul {
 
 .view-test form {
   display: none;
+}
+
+.view-test .view-content {
+  display: block;
+  clear: both;
+  /* Prevent vertical gaps */
+  line-height: 0;
+
+  width: 80%;
+  margin: 0 auto;
+
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+  column-gap:           0px;
+}
+
+@media (max-width: 1200px) {
+  .view-test .view-content {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+
+}
+@media (max-width: 1000px) {
+  .view-test .view-content {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  .view-test .view-content {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  .view-test .view-content {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+.view-test .view-content img {
+  background-clip: padding-box;
+  padding: 10px;
+  width: 100%;
 }

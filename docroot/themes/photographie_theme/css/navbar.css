@@ -1,8 +1,10 @@
 .mega-menu {
   width: 100%;
   position: absolute;
-  left: 170px;
   top: 15px;
+
+  margin-left: 170px;
+  padding-right: 175px;
 }
 
 .top-main-menu {
@@ -11,6 +13,18 @@
   vertical-align: middle;
 }
 
+.top-main-menu li {
+  display: inline;
+  margin-right: 1em;
+}
+
+.top-main-menu li:last-child {
+  margin-right: 0;
+}
+
+.top-main-menu .user-link {
+  float: right;
+}
 
 .categories-list {
   display: none;
@@ -21,8 +35,8 @@
   position: absolute;
   padding: 0;
   margin: 0;
-  left: -170px;
   top: 35px;
+  left: -170px;
   opacity: 1;
   transition: ease 1s;
 }
@@ -44,15 +58,16 @@
   width: 100%;
   height: 180px;
   background-size: cover;
+  background-position: center;
 }
 
 .category-panel p {
-  padding-top: 100px;
+  padding-top: 140px;
   text-align: center;
   font-size: 2em;
   text-decoration: none;
   color: #fff;
-  text-shadow: 0 0 5px #000;
+  text-shadow: 0 0 30px #000;
 }
 
 .mega-menu .wedding .category-panel {

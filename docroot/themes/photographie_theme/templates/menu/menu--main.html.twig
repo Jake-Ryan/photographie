@@ -64,5 +64,20 @@
 
       </ul>
     </li>
+
+    {% if logged_in %}
+      {% if photographie_theme_myphotos_link %}
+        <li>
+          <a href="{{ photographie_theme_myphotos_link.0 }}">{{ 'My Photos'|t }}</a>
+        </li>
+      {% endif %}
+      <li class="user-link">
+        <a href="user/logout">{{ 'Log out'|t }}</a>
+      </li>
+    {% else %}
+      <li class="user-link">
+        <a href="/user/login">{{ 'Login'|t }}</a>
+      </li>
+    {% endif %}
   </ul>
 </nav>

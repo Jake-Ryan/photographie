@@ -48,3 +48,21 @@ function photographie_theme_preprocess_field(&$vars) {
     }
   }
 }
+
+function photographie_theme_preprocess_menu(&$vars) {
+  $user_id = $vars['user']->id();
+
+  if ($user_id) {
+    $query = \Drupal::entityQuery('node')
+      ->condition('field_client', $user_id);
+    $result = $query->execute();
+
+    if ($result) {
+      $nids = array_values($result);
+
+      $nid = $nids[0];
+            
+      $vars['photographie_theme_myphotos_link'][] = "/node/" . $nid;
+    }
+  }
+}
