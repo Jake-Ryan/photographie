@@ -23,7 +23,7 @@ magnific-popup-selector:
   js:
     js/magnificpopup.js: {}
 
-scrolling-test:
+scripts:
   js:
     js/scripts.js: {}
 

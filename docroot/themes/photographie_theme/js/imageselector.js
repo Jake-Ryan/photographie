@@ -13,7 +13,8 @@
 
     $('.private-photos img').click(function() {
       event.preventDefault();
-      $(this).toggleClass('selected');
+      $this = $(this);
+      $this.toggleClass('selected');
 
       var selectedCount = $('.selected').length;
       $('#num-selected').replaceWith('<span id="num-selected">'+selectedCount+'</span>');

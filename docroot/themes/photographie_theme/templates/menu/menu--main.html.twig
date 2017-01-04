@@ -17,66 +17,46 @@
 #}
 <nav class="mega-menu">
   <ul class="top-main-menu">
-    <li>
-      <!-- Dropdown item -->
-      <a href="#" class="menu-categories dropdown-toggle" data-toggle="dropdown">{{ 'Categories'|t }}</a>
-      <ul class="categories-list dropdown-menu">
 
-        <a href="/categories?tid=1" class="menu-link">
-          <li class="category wedding">
-            <div class="category-panel">
-              <p>{{ 'Wedding'|t }}</p>
-            </div>
-          </li>
-        </a>
-
-        <a href="/categories?tid=2" class="menu-link">
-          <li class="category portrait">
-            <div class="category-panel">
-              <p>{{ 'Portrait'|t }}</p>
-            </div>
-          </li>
-        </a>
-
-        <a href="/categories?tid=11" class="menu-link">
-          <li class="category pet">
-            <div class="category-panel">
-              <p>{{ 'Pet'|t }}</p>
-            </div>
-          </li>
-        </a>
-
-        <a href="/categories?tid=8" class="menu-link">
-          <li class="category landscape">
-            <div class="category-panel">
-              <p>{{ 'Landscape'|t }}</p>
-            </div>
-          </li>
-        </a>
-
-        <a href="/categories?tid=12" class="menu-link">
-          <li class="category misc">
-            <div class="category-panel">
-              <p>{{ 'Misc'|t }}</p>
-            </div>
-          </li>
-        </a>
-
-      </ul>
+    <li class="home">
+      <a href="/" title=""><i class="fa fa-camera fa-2x" aria-hidden="true"></i></a>
     </li>
 
+    <li class="category wedding">
+      <a href="/categories?tid=1">{{ 'Wedding'|t }}</a>
+    </li>
+    <li class="category portrait">
+      <a href="/categories?tid=2">{{ 'Portrait'|t }}</a>
+    </li>
+    <li class="category pet">
+      <a href="/categories?tid=11">{{ 'Pet'|t }}</a>
+    </li>
+    <li class="category landscape">
+      <a href="/categories?tid=8">{{ 'Landscape'|t }}</a>
+    </li>
+    <li class="category misc">
+      <a href="/categories?tid=12">{{ 'Misc'|t }}</a>
+    </li>
+
+
+
     {% if logged_in %}
-      {% if photographie_theme_myphotos_link %}
-        <li>
-          <a href="{{ photographie_theme_myphotos_link.0 }}">{{ 'My Photos'|t }}</a>
-        </li>
-      {% endif %}
       <li class="user-link">
-        <a href="/user/logout">{{ 'Log out'|t }}</a>
+        <a href="/user/logout" title="Log out"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i></a>
       </li>
     {% else %}
       <li class="user-link">
-        <a href="/user/login">{{ 'Login'|t }}</a>
+        <a href="/user/login" title="Log in"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+      </li>
+    {% endif %}
+
+    <li class="user-link">
+      <a href="" title="Contact me"><i class="fa fa-phone fa-2x" aria-hidden="true"></i></a>
+    </li>
+
+    {% if photographie_theme_myphotos_link %}
+      <li class="my-photos">
+        <a href="{{ photographie_theme_myphotos_link.0 }}">{{ 'My Photos!'|t }}</a>
       </li>
     {% endif %}
   </ul>

@@ -83,7 +83,7 @@
   <div{{ content_attributes.addClass('content') }}>
     <!-- raw images -->
     <h2>Original images:</h2>
-    <p>Click to select images, or click the expand icon to view a larger version.</p>
+    <p>Select images you would like to order prints for, or download them for yourself!</p>
 
     <form id="private-images" action="" method="post">
       <div class="raw-images">
@@ -96,8 +96,19 @@
         <div class="selected-wrapper">
           <h2><span id="num-selected">0</span> images selected</h2>
         </div>
-        <input type="submit" value="Next"/>
+        <a class="popup-with-form" href="#popup-form">Next</a>
       </div>
+
+      <div id="popup-form" class="mfp-hide">
+          <div class="popup-selected">
+            <!-- window for displaying selected images -->
+          </div>
+          <fieldset class="popup-fields">
+            <textarea rows="4" cols="50" name="description" form="private-images" placeholder="Enter description..."></textarea>
+            <input id="send" type="submit" value="Send" />
+          </fieldset>
+      </div>
+
     </form>
 
   </div>

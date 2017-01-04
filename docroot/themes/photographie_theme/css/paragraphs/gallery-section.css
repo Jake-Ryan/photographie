@@ -59,3 +59,8 @@
   margin: 0 auto;
   width: 60%;
 }
+
+.gallery-section h2 {
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}

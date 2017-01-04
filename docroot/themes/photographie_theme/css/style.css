@@ -8,6 +8,11 @@ html, body {
   height: 100%;
 }
 
+body {
+  background-color: #2F4F4F;
+  color: #fff;
+}
+
 body.navbar-is-fixed-top {
   margin-top: 50px;
 }
@@ -119,7 +124,7 @@ ol, ul {
 
 .raw-images img.selected {
   outline: 10px solid lightblue;
-  outline-offset: -15px;
+  outline-offset: -13px;
 }
 
 #image-selection-box {
@@ -160,11 +165,42 @@ ol, ul {
 .image-wrapper .expand-icon {
   position: absolute;
   opacity: 0;
-  top: 10px;
-  left: 10px;
+  top: 3px;
+  left: 3px;
   padding: 10px;
   cursor: zoom-in;
   transition: opacity 600ms ease-in;
+  color: #000;
+}
+
+#popup-form {
+  height: 600px;
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -300px;
+  padding: 15px;
+  background-color: #5E5F6C;
+}
+
+.popup-selected {
+  width: 100%;
+  height: 400px;
+  padding: 15px;
+}
+
+.popup-fields {
+  width: 100%;
+  padding: 15px;
+}
+
+.popup-fields textarea {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
 .view-category-view .view-content .views-row {

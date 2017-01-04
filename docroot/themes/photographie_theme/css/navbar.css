@@ -1,91 +1,74 @@
 .mega-menu {
   width: 100%;
-  position: absolute;
-  top: 15px;
-
-  margin-left: 170px;
-  padding-right: 175px;
+  padding: 1em;
 }
 
-.top-main-menu {
-  list-style: none;
-  text-align: left;
+.home {
+  display: inline;
+  margin-right: 2em;
   vertical-align: middle;
 }
 
+.home a {
+  color: #000;
+}
+
+.top-main-menu {
+  width: 100%;
+  list-style: none;
+  text-align: left;
+  vertical-align: middle;
+  margin: 0;
+}
+
 .top-main-menu li {
-  display: inline;
-  margin-right: 1em;
+  display: inline-block;
 }
 
 .top-main-menu li:last-child {
   margin-right: 0;
 }
 
-.top-main-menu .user-link {
-  float: right;
+.top-main-menu li a {
+  color: #000;
 }
 
-.categories-list {
-  display: none;
-  list-style: none;
-  border: none;
-  width: 100%;
-  background-color: white;
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  top: 35px;
-  left: -170px;
-  opacity: 1;
-  transition: ease 1s;
+.top-main-menu .user-link {
+  float: right;
+  margin-left: 2em;
+  vertical-align: middle;
+  margin-top: 5px;
+}
+
+.top-main-menu .user-link a:hover i {
+  text-decoration: underline;
 }
 
 .category {
   display: inline-block;
-  float: left;
-  box-shadow: 0 0 5px black;
-  width: 20%;
+  vertical-align: middle;
 }
 
-.category:hover {
-  opacity: 0.5;
-  transition: ease 1s;
-  box-shadow: 0 0 60px #000;
-}
-
-.category-panel {
-  width: 100%;
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-}
-
-.category-panel p {
-  padding-top: 140px;
-  text-align: center;
+.category a {
   font-size: 2em;
-  text-decoration: none;
-  color: #fff;
-  text-shadow: 0 0 30px #000;
+  margin-right: .6em;
+  text-shadow: 0 0 10px #fff;
 }
 
-.mega-menu .wedding .category-panel {
-  background-image: url('http://greenweddingshoes.com/wp-content/uploads/2014/03/emilyeric-wedding-01.jpg');
+.my-photos {
+  float: right;
+  vertical-align: middle;
+  margin-right: 5em;
 }
 
-.mega-menu .portrait .category-panel {
-  background-image: url('https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97200&w=400&h=200');
+.my-photos a {
+  font-size: 2em;
 }
 
-.mega-menu .pet .category-panel {
-  background-image: url('https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97200&w=400&h=200');
+.navbar-header {
+  display: none;
 }
 
-.mega-menu .landscape .category-panel {
-  background-image: url('https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97200&w=400&h=200');
-}
-
-.mega-menu .misc .category-panel {
-  background-image: url('https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97200&w=400&h=200');
+.navbar-default {
+  background-color: #fff;
 }
