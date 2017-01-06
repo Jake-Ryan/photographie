@@ -1,42 +1,3 @@
-{#
-/**
- * @file
- * Theme override for a field.
- *
- * To override output, copy the "field.html.twig" from the templates directory
- * to your theme's directory and customize it, just like customizing other
- * Drupal templates such as page.html.twig or node.html.twig.
- *
- * Instead of overriding the theming for all fields, you can also just override
- * theming for a subset of fields using
- * @link themeable Theme hook suggestions. @endlink For example,
- * here are some theme hook suggestions that can be used for a field_foo field
- * on an article node type:
- * - field--node--field-foo--article.html.twig
- * - field--node--field-foo.html.twig
- * - field--node--article.html.twig
- * - field--field-foo.html.twig
- * - field--text-with-summary.html.twig
- * - field.html.twig
- *
- * Available variables:
- * - attributes: HTML attributes for the containing element.
- * - label_hidden: Whether to show the field label or not.
- * - title_attributes: HTML attributes for the title.
- * - label: The label for the field.
- * - multiple: TRUE if a field can contain multiple items.
- * - items: List of all the field items. Each item contains:
- *   - attributes: List of HTML attributes for each item.
- *   - content: The field item's content.
- * - entity_type: The entity type to which the field belongs.
- * - field_name: The name of the field.
- * - field_type: The type of the field.
- * - label_display: The display settings for the label.
- *
- *
- * @see template_preprocess_field()
- */
-#}
 {%
   set classes = [
     'field',
@@ -57,11 +18,10 @@
     <div{{ attributes.addClass(classes, 'field--items') }}>
       {% for item in items %}
         <div{{ item.attributes.addClass('field--item') }}>
-
           <div class="image-wrapper">
             <label class="image-select-wrapper" for="image-{{ item.content['#item'].entity.fid.value }}">
               <img class="loading" src="../themes/photographie_theme/images/loading.gif" data-src="{{ attribute(photographie_theme_image_unexpanded, item.content['#item'].entity.fid.value) }}" />
-              <input id="image-selection-box" type="checkbox" name="image-{{ item.content['#item'].entity.fid.value }}" value="{{ attribute(photographie_theme_filename, item.content['#item'].entity.fid.value) }}" />
+              <input id="image-{{ item.content['#item'].entity.fid.value }}" class="image-selection-box" type="checkbox" name="image-{{ item.content['#item'].entity.fid.value }}" value="{{ item.content['#item'].entity.uri.value }}" />
             </label>
             <a class="popup-image-expand" href="{{ attribute(photographie_theme_image_expanded, item.content['#item'].entity.fid.value) }}"><i class="expand-icon fa fa-search-plus" aria-hidden="true"></i></a>
           </div>
@@ -76,7 +36,7 @@
         <div class="image-wrapper">
           <label class="image-select-wrapper" for="image-{{ item.content['#item'].entity.fid.value }}">
             <img class="loading" src="../themes/photographie_theme/images/loading.gif" data-src="{{ attribute(photographie_theme_image_unexpanded, item.content['#item'].entity.fid.value) }}" />
-            <input id="image-selection-box" type="checkbox" name="image-{{ item.content['#item'].entity.fid.value }}" value="{{ attribute(photographie_theme_filename, item.content['#item'].entity.fid.value) }}" />
+            <input id="image-{{ item.content['#item'].entity.fid.value }}" class="image-selection-box" type="checkbox" name="image-{{ item.content['#item'].entity.fid.value }}" value="{{ item.content['#item'].entity.uri.value }}" />
           </label>
           <a class="popup-image-expand" href="{{ attribute(photographie_theme_image_expanded, item.content['#item'].entity.fid.value) }}"><i class="expand-icon fa fa-search-plus" aria-hidden="true"></i></a>
         </div>

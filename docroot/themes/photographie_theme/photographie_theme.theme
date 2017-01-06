@@ -1,10 +1,4 @@
 <?php
-/**
- * @file
- * Bootstrap sub-theme.
- *
- * Place your custom PHP code in this file.
- */
 
  use Drupal\image\Entity\ImageStyle;
  use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
@@ -61,7 +55,7 @@ function photographie_theme_preprocess_menu(&$vars) {
       $nids = array_values($result);
 
       $nid = $nids[0];
-            
+
       $vars['photographie_theme_myphotos_link'][] = "/node/" . $nid;
     }
   }

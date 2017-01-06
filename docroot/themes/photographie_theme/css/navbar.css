@@ -5,8 +5,18 @@
 
 .home {
   display: inline;
-  margin-right: 2em;
+  margin-right: 1em;
+  padding-right: 1em;
   vertical-align: middle;
+  border-right: 2px solid grey;
+}
+
+.home .fa-camera {
+  font-size: 1em;
+}
+
+.home .fa-home {
+  font-size: 1.15em;
 }
 
 .home a {
@@ -19,29 +29,36 @@
   text-align: left;
   vertical-align: middle;
   margin: 0;
+  border-bottom: 2px solid grey;
 }
 
 .top-main-menu li {
   display: inline-block;
-}
-
-.top-main-menu li:last-child {
-  margin-right: 0;
+  vertical-align: middle;
 }
 
 .top-main-menu li a {
   color: #000;
+  font-size: 2em;
 }
 
 .top-main-menu .user-link {
   float: right;
   margin-left: 2em;
   vertical-align: middle;
-  margin-top: 5px;
 }
 
 .top-main-menu .user-link a:hover i {
   text-decoration: underline;
+}
+
+.categories {
+  display: inline-block;
+}
+
+.categories li:last-child {
+  border-right: 2px solid grey;
+  margin-right: 1em;
 }
 
 .category {
@@ -56,13 +73,15 @@
 }
 
 .my-photos {
-  float: right;
-  vertical-align: middle;
-  margin-right: 5em;
+  display: none;
 }
 
 .my-photos a {
+  display: block;
+  text-align: center;
   font-size: 2em;
+  color: #000;
+  margin-top: .5em;
 }
 
 .navbar-header {

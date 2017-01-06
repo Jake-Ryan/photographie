@@ -1,8 +1,9 @@
 (function ($) {
   $(document).ready(function() {
+    var fixedVisible = false;
 
     // UNVEIL
-    $('.private-photos img').unveil(200, function() {
+    $('.private-photos img').unveil(400, function() {
       $(this).load(function() {
         $this = $(this);
         $this.removeClass('loading');
@@ -12,12 +13,24 @@
     });
 
     $('.private-photos img').click(function() {
-      event.preventDefault();
       $this = $(this);
       $this.toggleClass('selected');
 
       var selectedCount = $('.selected').length;
       $('#num-selected').replaceWith('<span id="num-selected">'+selectedCount+'</span>');
+
+      if (selectedCount >= 1) {
+        if (fixedVisible == false) {
+          $('#fixed-bottom').slideToggle('slow');
+          fixedVisible = true;
+        }
+      } else {
+        if (fixedVisible == true) {
+          $('#fixed-bottom').slideToggle('slow');
+          fixedVisible = false;
+        }
+      }
+
     });
 
   });

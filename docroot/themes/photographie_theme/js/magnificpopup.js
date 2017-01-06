@@ -30,12 +30,19 @@
       type: 'inline',
       preloader: false,
 
-      // When element is focused, some mobile browsers in some cases zoom in
-      // It looks not nice, so we disable it:
       callbacks: {
         beforeOpen: function() {
-          // get all selected image values
-          // 
+
+          var searchIDs = $("#private-images input:checked").map(function(){
+            return $(this).val();
+          }).get();
+
+          searchIDs.forEach(function(item) {
+            var img = '/system/files' + item.substring(9);
+            console.log(img);
+            $('.popup-selected').append('<img src="' + img + '" />');
+          });
+
         }
       }
     });

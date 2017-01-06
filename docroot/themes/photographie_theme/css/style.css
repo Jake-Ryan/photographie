@@ -9,12 +9,8 @@ html, body {
 }
 
 body {
-  background-color: #2F4F4F;
-  color: #fff;
-}
-
-body.navbar-is-fixed-top {
-  margin-top: 50px;
+  background-color: #e7e7e7;
+  color: #000;
 }
 
 .main-container {
@@ -127,13 +123,9 @@ ol, ul {
   outline-offset: -13px;
 }
 
-#image-selection-box {
-  position: absolute;
-  opacity: 0;
-}
-
 #fixed-bottom {
   text-align: center;
+  display: none;
 }
 
 #fixed-bottom {
@@ -162,6 +154,11 @@ ol, ul {
   margin: 0;
 }
 
+.image-select-wrapper input {
+  position: absolute;
+  opacity: 0;
+}
+
 .image-wrapper .expand-icon {
   position: absolute;
   opacity: 0;
@@ -186,9 +183,14 @@ ol, ul {
 }
 
 .popup-selected {
-  width: 100%;
+  width: 470px;
   height: 400px;
-  padding: 15px;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+.popup-selected img {
+  width: 150px;
 }
 
 .popup-fields {
@@ -307,5 +309,9 @@ ol, ul {
 .view-test .view-content img {
   background-clip: padding-box;
   padding: 10px;
+  width: 100%;
+}
+
+.footer {
   width: 100%;
 }

@@ -19,45 +19,52 @@
   <ul class="top-main-menu">
 
     <li class="home">
-      <a href="/" title=""><i class="fa fa-camera fa-2x" aria-hidden="true"></i></a>
+      <a href="/" title=""><i class="fa fa-camera" aria-hidden="true"></i></a>
     </li>
 
-    <li class="category wedding">
-      <a href="/categories?tid=1">{{ 'Wedding'|t }}</a>
-    </li>
-    <li class="category portrait">
-      <a href="/categories?tid=2">{{ 'Portrait'|t }}</a>
-    </li>
-    <li class="category pet">
-      <a href="/categories?tid=11">{{ 'Pet'|t }}</a>
-    </li>
-    <li class="category landscape">
-      <a href="/categories?tid=8">{{ 'Landscape'|t }}</a>
-    </li>
-    <li class="category misc">
-      <a href="/categories?tid=12">{{ 'Misc'|t }}</a>
-    </li>
+    <ul class="categories">
+      <li class="category wedding">
+        <a href="/categories?tid=1">{{ 'Wedding'|t }}</a>
+      </li>
+      <li class="category portrait">
+        <a href="/categories?tid=2">{{ 'Portrait'|t }}</a>
+      </li>
+      <li class="category pet">
+        <a href="/categories?tid=11">{{ 'Pet'|t }}</a>
+      </li>
+      <li class="category landscape">
+        <a href="/categories?tid=8">{{ 'Landscape'|t }}</a>
+      </li>
+      <li class="category misc">
+        <a href="/categories?tid=12">{{ 'Misc'|t }}</a>
+      </li>
+    </ul>
 
-
+    <li class="about-me">
+      <a href="/about-me">{{ 'About me'|t }}</a>
+    </li>
 
     {% if logged_in %}
       <li class="user-link">
-        <a href="/user/logout" title="Log out"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i></a>
+        <a href="/user/logout" title="Log out"><i class="fa fa-power-off" aria-hidden="true"></i></a>
       </li>
     {% else %}
       <li class="user-link">
-        <a href="/user/login" title="Log in"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+        <a href="/user/login" title="Log in"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
       </li>
     {% endif %}
 
     <li class="user-link">
-      <a href="" title="Contact me"><i class="fa fa-phone fa-2x" aria-hidden="true"></i></a>
+      <a href="/contact" title="Contact me"><i class="fa fa-phone" aria-hidden="true"></i></a>
     </li>
 
-    {% if photographie_theme_myphotos_link %}
-      <li class="my-photos">
-        <a href="{{ photographie_theme_myphotos_link.0 }}">{{ 'My Photos!'|t }}</a>
-      </li>
-    {% endif %}
   </ul>
+
+  <div class="my-photos">
+    {% if logged_in %}
+      {% if photographie_theme_myphotos_link %}
+        <a href="{{ photographie_theme_myphotos_link.0 }}">{{ 'My Photos!'|t }}</a>
+      {% endif %}
+    {% endif %}
+  </div>
 </nav>
