@@ -22,5 +22,6 @@ regions:
 libraries:
   - 'photographie_theme/global-styling'
   - 'photographie_theme/font-awesome'
-  - 'photographie_theme/unveil'
   - 'photographie_theme/scripts'
+  - 'photographie_theme/masonry'
+  - 'photographie_theme/imagesloaded'

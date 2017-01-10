@@ -11,7 +11,6 @@
 %}
 
 {{ attach_library('photographie_theme/magnific-popup') }}
-{{ attach_library('photographie_theme/magnific-popup-selector') }}
 {{ attach_library('photographie_theme/image-selector') }}
 
 <article{{ attributes.addClass(classes) }}>
@@ -20,9 +19,9 @@
     <h2>Original images:</h2>
     <p>Select images you would like to order prints for, or download them for yourself!</p>
 
-    <form id="private-images" action="" method="post">
+    <form id="private-images" action="mailto:jake.ryan@accessadvertising.co.uk" method="post">
       <div class="raw-images">
-        <fieldset>
+        <fieldset class="grid">
           {{ content['field_raw_images'] }}
         </fieldset>
       </div>

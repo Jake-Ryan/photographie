@@ -19,14 +19,14 @@ image-selector:
   js:
     js/imageselector.js: {}
 
-magnific-popup-selector:
-  js:
-    js/magnificpopup.js: {}
-
 scripts:
   js:
     js/scripts.js: {}
 
-unveil:
+masonry:
   js:
-    js/vendor/unveil/jquery.unveil.js: {}
+    js/vendor/masonry/masonry.pkgd.min.js: {}
+
+imagesloaded:
+  js:
+    js/vendor/imagesloaded/imagesloaded.pkgd.min.js: {}

@@ -2,16 +2,6 @@
   $(document).ready(function() {
     var fixedVisible = false;
 
-    // UNVEIL
-    $('.private-photos img').unveil(400, function() {
-      $(this).load(function() {
-        $this = $(this);
-        $this.removeClass('loading');
-        $this.addClass('loaded');
-        $this.closest('div').find('i').css("opacity", "1");
-      });
-    });
-
     $('.private-photos img').click(function() {
       $this = $(this);
       $this.toggleClass('selected');
@@ -30,7 +20,6 @@
           fixedVisible = false;
         }
       }
-
     });
 
   });
