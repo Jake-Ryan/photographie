@@ -6,9 +6,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 'gallery-section'
 ]
 %}
-{% set view_meh = content.field_category.0['#title']|clean_class %}
+
+{{ attach_library('photographie_theme/masonry') }}
 
 <div{{ attributes.addClass(classes) }}>
   <h2 class="gallery-heading">{{ content.field_section_title }}</h2>
-  {{ drupal_view('test', view_meh) }}
+  <div class="grid">
+    {{ content.field_gallery_images }}
+  </div>
 </div>

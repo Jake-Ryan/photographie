@@ -4,13 +4,10 @@
  use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
   function photographie_theme_preprocess_node(&$vars) {
-
     if (isset($vars['node'])) {
-
       $node = $vars['node'];
 
       if ($node->getType() == 'private_photo_collection') {
-
         $client = $vars['node']->field_client->getValue();
         $user_id = \Drupal::currentUser()->id();
         $user_roles = $vars['user']->getRoles();

@@ -14,68 +14,18 @@
       $('.image-wrapper .expand-icon').css('opacity', 1);
     });
 
-
-
-
-    $('.popup-image-expand').magnificPopup({
-      type: 'image',
-      closeOnContentClick: true,
-      mainClass: 'mfp-img-mobile mfp-with-zoom',
-      image: {
-        verticalFit: true
-      }
-    });
-
-    $('.view-category-view .popup-image').magnificPopup({
-      type: 'image',
-      closeOnContentClick: true,
-      mainClass: 'mfp-img-mobile mfp-with-zoom',
-      image: {
-        verticalFit: true
-      },
-      zoom: {
-        enabled: true,
-        duration: 300, // don't foget to change the duration also in CSS
-        opener: function(element) {
-          return element.find('img');
-        }
-      }
-    });
-
-
-
-    $('.popup-with-form').magnificPopup({
-      type: 'inline',
-      preloader: false,
-
-      callbacks: {
-        beforeOpen: function() {
-
-          var images = $("#private-images input:checked").map(function(){
-            return $(this).val();
-          }).get();
-
-          images.forEach(function(item) {
-            var img = '/system/files' + item.substring(9);
-            console.log(img);
-            $('.popup-selected').append('<img src="' + img + '" />');
-          });
-        }
-      }
-    });
-
-    $('#send').click(function() {
-      event.preventDefault();
-
-      var $form = $('#private-images');
-
-      var images = $("#private-images input:checked").map(function(){
-        return $(this).val().substring(16);
-      }).get();
-
-      // object of filenames from selected images. Need to pass this to php somehow.
-      console.log(images);
-    });
+    // $('#send').click(function() {
+    //   event.preventDefault();
+    //
+    //   var $form = $('#private-images');
+    //
+    //   var images = $("#private-images input:checked").map(function(){
+    //     return $(this).val().substring(16);
+    //   }).get();
+    //
+    //   // object of filenames from selected images. Need to pass this to php somehow.
+    //   console.log(images);
+    // });
 
 
 
@@ -88,6 +38,48 @@
     $('.home').hover(function() {
       $('.home a i').toggleClass('fa-camera fa-home');
     });
+
+
+
+    /* MAGNIFIC POPUP */
+    $('.grid-item a').magnificPopup({
+  		type: 'image',
+  		closeOnContentClick: true,
+  		closeBtnInside: false,
+  		fixedContentPos: true,
+  		mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+  		image: {
+  			verticalFit: true
+  		},
+  		zoom: {
+  			enabled: true,
+  			duration: 300 // don't foget to change the duration also in CSS
+  		}
+  	});
+
+    if ($('.popup-with-form').length) {
+      $('.popup-with-form').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        closeOnContentClick: false,
+
+        callbacks: {
+          beforeOpen: function() {
+            $('.popup-selected img').remove();
+
+            var images = $("#private-images input:checked").map(function(){
+              return $(this).val();
+            }).get();
+
+            images.forEach(function(item) {
+              var img = '/system/files' + item.substring(9);
+              $('.popup-selected').append('<img src="' + img + '" />');
+            });
+          }
+        }
+      });
+    }
+
 
   });
 }(jQuery));
