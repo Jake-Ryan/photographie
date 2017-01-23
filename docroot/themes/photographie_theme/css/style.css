@@ -38,6 +38,10 @@ ol, ul {
   display: none;
 }
 
+img {
+  box-shadow: 5px 5px 5px black;
+}
+
 /**
 * Image collection
 */
@@ -70,7 +74,7 @@ ol, ul {
   width: 100%;
   bottom: 0;
   left: 0;
-  height: 75px;
+  height: 100px;
   padding: 0 5em;
   text-align: center;
   display: none;
@@ -81,15 +85,26 @@ ol, ul {
   margin-top: 1em
 }
 
-.selected-wrapper > h2 > span,
-.selected-wrapper > h2 {
+.selected-wrapper h2 {
+  display: block;
+}
+
+.selected-wrapper h2 span {
   display: inline;
+}
+
+.selected-wrapper a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 1em;
 }
 
 .image-select-wrapper {
   position: relative;
   width: 100%;
   margin: 0;
+  cursor: pointer;
 }
 
 .image-select-wrapper input {
@@ -105,7 +120,8 @@ ol, ul {
   cursor: zoom-in;
   transition: opacity 600ms ease-in;
   opacity: 0;
-  color: #000;
+  color: white;
+  text-shadow: 0px 0px 8px black;
 }
 
 #popup-form {
@@ -131,7 +147,7 @@ ol, ul {
   width: 45%;
   margin: 2.5%;
   border: 2px solid whitesmoke;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .popup-fields {
