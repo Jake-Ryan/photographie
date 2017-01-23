@@ -38,7 +38,7 @@ ol, ul {
   display: none;
 }
 
-img {
+.main-container img {
   box-shadow: 5px 5px 5px black;
 }
 

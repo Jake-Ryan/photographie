@@ -88,6 +88,39 @@
   display: none;
 }
 
+.mobile-categories {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .navbar-header {
+    display: block;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .top-main-menu {
+    display: none;
+  }
+
+  .in .top-main-menu {
+    display: block;
+  }
+
+  .in .categories {
+    display: none;
+  }
+
+  .in .mobile-categories {
+    display: inline-block !important;
+    border-right: 2px solid grey;
+    padding-right: 1em;
+    margin-right: 1em;
+  }
+}
+
 .navbar-default {
   background-color: #fff;
 }
