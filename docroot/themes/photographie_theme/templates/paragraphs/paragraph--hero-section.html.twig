@@ -8,8 +8,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 <section{{ attributes.addClass(classes).setAttribute('id', id) }}>
 	<div class="p-container">
-		<div class="hero-image">
-	  	{{ content.field_hero_image }}
+		<div class="hero-image" style="background-image: url({{ file_url(content.field_hero_image.0['#item'].entity.getfileuri()) }})">
 		</div>
 	</div>
 </section>

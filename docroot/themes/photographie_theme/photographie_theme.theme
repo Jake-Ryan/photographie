@@ -38,6 +38,14 @@ function photographie_theme_preprocess_field(&$vars) {
       $vars['photographie_theme_filename'][$fid] = $filename;
     }
   }
+
+  if ($vars['field_name'] == 'field_hero_image') {
+    foreach ($vars['items'] as $item) {
+      $uri = $item['content']['#item']->entity->getFileName();
+
+      var_dump($uri);
+    }
+  }
 }
 
 function photographie_theme_preprocess_menu(&$vars) {

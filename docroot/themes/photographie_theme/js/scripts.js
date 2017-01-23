@@ -9,6 +9,10 @@
 
     $grid.masonry('layout');
 
+    $grid.imagesLoaded().done(function() {
+      $grid.masonry('layout');
+    });
+
     if ($('.view-test').length) {
       $(document).ajaxComplete(function() {
         var $grid = $('.grid').masonry({
@@ -18,6 +22,11 @@
         });
 
         $grid.masonry('layout');
+
+        // force layout again just incase of issues.
+        $grid.imagesLoaded().done(function() {
+          $grid.masonry('layout');
+        });
       });
     }
 
