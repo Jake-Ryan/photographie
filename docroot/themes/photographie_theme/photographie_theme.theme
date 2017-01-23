@@ -23,7 +23,7 @@
 
 
 function photographie_theme_preprocess_field(&$vars) {
-  if ($vars['field_name'] == 'field_raw_images') {
+  if ($vars['field_name'] == 'field_raw_images' || $vars['field_name'] == 'field_images' || $vars['field_name'] == 'field_gallery_images') {
 
     foreach ($vars['items'] as $item) {
       $fid = $item['content']['#item']->entity->id();

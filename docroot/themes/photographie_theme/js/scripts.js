@@ -1,33 +1,33 @@
 (function ($) {
   $(document).ready(function() {
 
-    // Masonry grid - Imagesloaded
     var $grid = $('.grid').masonry({
       // options
       itemSelector: '.grid-item',
       gutter: 15
     });
 
-    $grid.imagesLoaded().progress(function() {
-      $grid.masonry('layout');
-    }).done(function() {
-      $('.image-wrapper .expand-icon').css('opacity', 1);
-    });
+    $grid.masonry('layout');
 
-    // $('#send').click(function() {
-    //   event.preventDefault();
-    //
-    //   var $form = $('#private-images');
-    //
-    //   var images = $("#private-images input:checked").map(function(){
-    //     return $(this).val().substring(16);
-    //   }).get();
-    //
-    //   // object of filenames from selected images. Need to pass this to php somehow.
-    //   console.log(images);
-    // });
+    if ($('.view-test').length) {
+      $(document).ajaxComplete(function() {
+        var $grid = $('.grid').masonry({
+          // options
+          itemSelector: '.grid-item',
+          gutter: 15
+        });
 
+        $grid.masonry('layout');
+      });
+    }
 
+    if ($('.private-photo-collection').length) {
+      $grid.imagesLoaded().progress(function() {
+        $grid.masonry('layout');
+      }).done(function() {
+        $('.image-wrapper .expand-icon').css('opacity', 1);
+      });
+    }
 
 
 
@@ -51,6 +51,9 @@
   		image: {
   			verticalFit: true
   		},
+      gallery: {
+        enabled: true
+      },
   		zoom: {
   			enabled: true,
   			duration: 300 // don't foget to change the duration also in CSS
@@ -79,6 +82,19 @@
         }
       });
     }
+
+    $('#send').click(function() {
+      event.preventDefault();
+
+      // var $form = $('#private-images');
+      //
+      // var images = $("#private-images input:checked").map(function(){
+      //   return $(this).val().substring(16);
+      // }).get();
+      //
+      // // object of filenames from selected images. Need to pass this to php somehow.
+      // console.log(images);
+    });
 
 
   });

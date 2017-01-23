@@ -56,6 +56,10 @@ ol, ul {
   max-width: 18%;
 }
 
+.grid-item img {
+  width: 100%;
+}
+
 .raw-images img.selected {
   outline: 10px solid lightblue;
   outline-offset: -10px;
